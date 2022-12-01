@@ -101,6 +101,8 @@ function Header() {
                     <img src={images.logo} alt="logo" />
                 </Link>
 
+                <Button>Click me!</Button>
+
                 <Search />
 
                 <div className={cx('actions')}>
