@@ -48,18 +48,36 @@ function Sidebar() {
 
     return (
         <aside className={cx('wrapper')}>
-            <Menu>
-                <MenuItem title="For you" to={config.routes.home} icon={<HomeIcon />} activeIcon={<HomeActiveIcon />} />
-                <MenuItem
-                    title="Following"
-                    to={config.routes.following}
-                    icon={<UserGroupIcon />}
-                    activeIcon={<UserGroupActiveIcon />}
-                />
-                <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
-            </Menu>
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onViewChange={handleViewChange} />
-            <FollowingAccount label="Following accounts" data={followingUsers} />
+            <div className={cx('sidebarScroll')}>
+                <div className={cx('sidebarScrollWrapper')}>
+                    <Menu>
+                        <MenuItem
+                            title="For you"
+                            to={config.routes.home}
+                            icon={<HomeIcon />}
+                            activeIcon={<HomeActiveIcon />}
+                        />
+                        <MenuItem
+                            title="Following"
+                            to={config.routes.following}
+                            icon={<UserGroupIcon />}
+                            activeIcon={<UserGroupActiveIcon />}
+                        />
+                        <MenuItem
+                            title="LIVE"
+                            to={config.routes.live}
+                            icon={<LiveIcon />}
+                            activeIcon={<LiveActiveIcon />}
+                        />
+                    </Menu>
+                    <SuggestedAccounts
+                        label="Suggested accounts"
+                        data={suggestedUsers}
+                        onViewChange={handleViewChange}
+                    />
+                    <FollowingAccount label="Following accounts" data={followingUsers} />
+                </div>
+            </div>
         </aside>
     );
 }

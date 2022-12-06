@@ -3,3 +3,50 @@
     padding: 20px 0 26px 8px;
     margin-left: -18px;
 }
+
+.sidebarScroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    top: 60px;
+    bottom: 0;
+    width: 356px;
+    background: var(--white);
+    position: fixed;
+    z-index: 5;
+    padding-right: 8px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        overflow-y: auto;
+        transition: all 10s ease-in-out;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+}
+
+.sidebarScrollWrapper {
+    padding: 20px 0 26px 0;
+}
+
+.divScrollBar {
+    position: absolute;
+    padding: 0 4px;
+    top: 0;
+    transform-origin: right top;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1) scale(2.20543) translateZ(-1.20543px)
+        translateZ(-2px);
+    transform-style: preserve-3d;
+    right: 0;
+    height: 233.968px;
+}
+
+.divScrollBarThumb {
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    background: rgba(22, 24, 35, 0.06);
+}

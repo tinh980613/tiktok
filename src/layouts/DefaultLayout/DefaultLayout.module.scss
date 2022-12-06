@@ -5,13 +5,22 @@
 }
 
 .container {
-    width: var(--default-layout-width);
-    max-width: 100%;
     padding: 0 var(--default-layout-horizontal-spacer);
     margin-top: var(--default-layout-header-height);
     display: flex;
+    width: 100vw;
+    max-width: 1150px;
+    justify-content: space-between;
+    -webkit-align-self: center;
+    align-self: center;
+    flex: 1 1 auto;
 }
 
 .content {
+    margin-left: 16px;
+    width: 692px;
+    max-width: 692px;
+    padding: 24px 0;
+    position: relative;
     flex: 1;
 }

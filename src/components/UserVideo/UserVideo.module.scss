@@ -1,0 +1,163 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 692px;
+    align-items: flex-start;
+    padding: 20px 0;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        background: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.container {
+    margin-left: 12px;
+    width: 624px;
+    -webkit-flex: 1 1 624px;
+    -ms-flex: 1 1 624px;
+    flex: 1 1 624px;
+}
+
+.info {
+    margin-right: 114px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.userName {
+    font-family: SofiaPro, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.check {
+    font-size: 1.4rem;
+    color: #20d5ec;
+}
+
+.name {
+    font-family: ProximaNova, sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.follow-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    top: 28px;
+}
+
+.video-desc {
+    line-height: 2.2rem;
+}
+
+.video-music {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.video {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.feedVideo {
+    position: relative;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+    height: 600px;
+}
+
+.videoPlayCardholder {
+    display: block;
+    visibility: hidden;
+    height: 100%;
+}
+
+.videoPlayerContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.divContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-position: center;
+    background-position: center;
+}
+
+.imgPoster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.basicPlayerWapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.playerVideo {
+    height: 100%;
+    & div {
+        height: 100%;
+    }
+
+    & video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.actionItem {
+}
+
+.buttonActionItem {
+}
