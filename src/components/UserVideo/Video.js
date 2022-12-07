@@ -15,7 +15,7 @@ function Video(props, ref) {
 
     return (
         <div>
-            <video ref={videoRef} src={video1.video} width="280" height="auto" />
+            <video controls ref={videoRef} src={video1.video} width="280" height="auto" />
         </div>
     );
 }

@@ -1,12 +1,28 @@
 import UserVideo from '~/components/UserVideo/';
-import { MusicIcon } from '~/components/Icons';
+import { MusicIcon, LikeIcon, ShareIcon, CommentIcon } from '~/components/Icons';
+import Tippy from '@tippyjs/react/headless';
 
 function Home() {
     return (
         <div>
-            <UserVideo iconMusic={<MusicIcon />} />
-            <UserVideo iconMusic={<MusicIcon />} />
-            <UserVideo iconMusic={<MusicIcon />} />
+            <UserVideo
+                iconMusic={<MusicIcon />}
+                likeIcon={<LikeIcon />}
+                commentIcon={<CommentIcon />}
+                shareIcon={<ShareIcon />}
+            />
+            <UserVideo
+                iconMusic={<MusicIcon />}
+                likeIcon={<LikeIcon />}
+                commentIcon={<CommentIcon />}
+                shareIcon={<ShareIcon />}
+            />
+            <UserVideo
+                iconMusic={<MusicIcon />}
+                likeIcon={<LikeIcon />}
+                commentIcon={<CommentIcon />}
+                shareIcon={<ShareIcon />}
+            />
         </div>
     );
 }

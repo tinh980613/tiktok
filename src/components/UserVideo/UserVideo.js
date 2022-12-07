@@ -1,25 +1,91 @@
-import classNames from 'classnames/bind';
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './UserVideo.module.scss';
-import config from '~/config';
-import Image from '~/components/Image';
-import Button from '~/components/Button';
-import Video from './Video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from '~/components/Button';
+import Image from '~/components/Image';
+import config from '~/config';
+import styles from './UserVideo.module.scss';
+import Video from './Video';
+import {
+    EmbedIcon,
+    SendtoFriendIcon,
+    SharetoFaceBookIcon,
+    SharetoWhatsAppIcon,
+    CopyLinkIcon,
+} from '~/components/Icons';
+
+import Share from '~/components/Popper/Share';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function UserVideo({ iconMusic }) {
+const SHARE_INIT = [
+    {
+        icon: <EmbedIcon />,
+        title: 'Embed',
+        to: '/Embed',
+    },
+    {
+        icon: <SendtoFriendIcon />,
+        title: 'Send to friends',
+        to: '/feedback',
+    },
+    {
+        icon: <SharetoFaceBookIcon />,
+        title: 'Share to Facebook',
+    },
+    {
+        icon: <SharetoWhatsAppIcon />,
+        title: 'Share to WhatsApp',
+    },
+    {
+        icon: <CopyLinkIcon />,
+        title: 'Copy link',
+    },
+];
+
+const SHARE_MORE = [
+    ...SHARE_INIT,
+    {
+        icon: <EmbedIcon />,
+        title: 'Embed',
+        to: '/Embed',
+    },
+    {
+        icon: <SendtoFriendIcon />,
+        title: 'Send to friends',
+        to: '/feedback',
+    },
+    {
+        icon: <SharetoFaceBookIcon />,
+        title: 'Share to Facebook',
+    },
+    {
+        icon: <SharetoWhatsAppIcon />,
+        title: 'Share to WhatsApp',
+    },
+    {
+        icon: <CopyLinkIcon />,
+        title: 'Copy link',
+    },
+];
+
+function UserVideo({ iconMusic, likeIcon, commentIcon, shareIcon }) {
     const videoRef = useRef();
 
-    const handlePlay = () => {
-        return videoRef.current.play();
-    };
+    const [isClick, setIsClick] = useState(false);
 
-    const handlePause = () => {
-        return videoRef.current.pause();
+    // const handlePlay = () => {
+    //     return videoRef.current.play();
+    // };
+
+    // const handlePause = () => {
+    //     return videoRef.current.pause();
+    // };
+
+    const handleShowMore = () => {
+        setIsClick(!isClick);
     };
 
     return (
@@ -72,17 +138,47 @@ function UserVideo({ iconMusic }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className={cx('playIcon')}></div>
-                            <div className={cx('voiceControl')}></div>
-                            <div className={cx('videoControl')}></div>
+                            {/* <div className={cx('playIcon')}>
+                                <button onClick={handlePlay}>Play</button>
+                                <button onClick={handlePause}>Pause</button>
+                            </div>
+                            <div className={cx('voiceControl')}>
+                                <button onClick={handlePlay}>Voice</button>
+                                <button onClick={handlePause}>Mute</button>
+                            </div>
+                            <div className={cx('videoControl')}>
+                                <div className={cx('seekBarControl')}>
+                                    <div className={cx('seekBarProgress')}></div>
+                                    <div className={cx('seekBarCircle')}></div>
+                                    <div className={cx('seekBar')}></div>
+                                </div>
+                            </div>
                             <div className={cx('videoControlBottom')}></div>
-                            <p className={cx('report')}></p>
+                            <p className={cx('report')}></p> */}
                         </div>
-                        <button onClick={handlePlay}>Play</button>
-                        <button onClick={handlePause}>Pause</button>
                     </div>
                     <div className={cx('actionItem')}>
-                        <button className={cx('buttonActionItem')}></button>
+                        <button className={cx('buttonActionItem')}>
+                            <span className={cx('iconBtn')}>{likeIcon}</span>
+                            <strong className={cx('iconText')}>50</strong>
+                        </button>
+                        <button className={cx('buttonActionItem')}>
+                            <span className={cx('iconBtn')}>{commentIcon}</span>
+                            <strong className={cx('iconText')}>444</strong>
+                        </button>
+                        <button className={cx('buttonActionItem')}>
+                            <Share
+                                items={isClick ? SHARE_MORE : SHARE_INIT}
+                                onClick={handleShowMore}
+                                isSee={!isClick}
+                                onHide={handleShowMore}
+                            >
+                                <div>
+                                    <span className={cx('iconBtn')}>{shareIcon}</span>
+                                    <strong className={cx('iconText')}>40</strong>
+                                </div>
+                            </Share>
+                        </button>
                     </div>
                 </div>
             </div>
