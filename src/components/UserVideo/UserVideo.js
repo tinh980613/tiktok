@@ -87,6 +87,9 @@ function UserVideo({ iconMusic, likeIcon, commentIcon, shareIcon }) {
     const handleShowMore = () => {
         setIsClick(!isClick);
     };
+    const handleHide = () => {
+        setIsClick(false);
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -171,7 +174,7 @@ function UserVideo({ iconMusic, likeIcon, commentIcon, shareIcon }) {
                                 items={isClick ? SHARE_MORE : SHARE_INIT}
                                 onClick={handleShowMore}
                                 isSee={!isClick}
-                                onHide={handleShowMore}
+                                onHide={handleHide}
                             >
                                 <div>
                                     <span className={cx('iconBtn')}>{shareIcon}</span>
